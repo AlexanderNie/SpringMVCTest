@@ -1,7 +1,6 @@
 package com.welearn.TestSpring;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -12,15 +11,12 @@ public class App
 {
     public static void main( String[] args )
     {
-    	 AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-    	 Student s1 = (Student)context.getBean("student");
-    	 System.out.println("s1 = >" + s1);
+    	Integer i = 10000;
+    	Integer j = 10000;
+    	if (i.equals(j))
+    		System.out.println("s1 equals s2");
+    	else 
+    		System.out.println("s1 not equals s2");
     	 
-    	 Student s2 = (Student)context.getBean("student");
-    	 System.out.println("change " +  s2);
-    	 s2.setStudentid(32);
-    	 
-    	 System.out.println(s1);
-    	 context.registerShutdownHook();
     }
 }
